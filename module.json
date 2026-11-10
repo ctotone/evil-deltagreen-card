@@ -29,7 +29,8 @@
   ],
   "url": "https://github.com/ctotone/evil-deltagreen-card",
   "esmodules": [
-    "scripts/result-colors.js"
+    "scripts/result-colors.js",
+    "scripts/standard-chat.js"
   ],
   "languages": [
     {

@@ -808,3 +808,63 @@
   white-space: normal;
   overflow-wrap: anywhere;
 }
+
+
+/* Standard Foundry messages — public/whispered text and generic dice rolls.
+   Preserve the native message header, content hierarchy, links, and dice actions.
+   Delta Green chat cards are intentionally excluded. */
+.chat-message.evil-standard-chat:not(.dg-chat-card-message) {
+  box-sizing: border-box;
+  padding: 15px 16px 17px;
+  border: 0;
+  border-radius: 12px;
+  background: #363636 url('../assets/background-chat.webp') center / 100% 100% no-repeat;
+  color: #f0f0f0;
+  box-shadow: 0 2px 9px rgba(0, 0, 0, .30);
+  font-family: 'atwriter', 'SpecialElite', serif;
+  overflow: hidden;
+}
+.chat-message.evil-standard-chat.evil-standard-chat--private:not(.dg-chat-card-message) {
+  background-color: #743a1c;
+  background-image: url('../assets/background-private.webp');
+  color: #fff0dd;
+}
+.chat-message.evil-standard-chat :is(.message-header, .message-content) {
+  color: inherit;
+  font-family: 'atwriter', 'SpecialElite', serif;
+  background: transparent;
+}
+.chat-message.evil-standard-chat :is(
+  .message-sender, .message-metadata, .message-content,
+  .message-content p, .message-content h1, .message-content h2,
+  .message-content h3, .message-content h4, .message-content span,
+  .message-content strong, .message-content em,
+  .message-content button, .message-content .dice-formula,
+  .message-content .dice-total, .message-content .dice-tooltip
+):not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular) {
+  font-family: 'atwriter', 'SpecialElite', serif !important;
+}
+.chat-message.evil-standard-chat .message-header {
+  border-bottom-color: rgba(255, 255, 255, .35);
+}
+.chat-message.evil-standard-chat .message-header :is(.message-sender, .message-metadata, time) {
+  color: inherit;
+}
+.chat-message.evil-standard-chat .message-content :is(.dice-formula, .dice-total) {
+  color: inherit;
+  background: rgba(0,0,0,.16);
+  border-color: rgba(255,255,255,.33);
+  box-shadow: none;
+}
+.chat-message.evil-standard-chat .message-content .dice-tooltip {
+  color: inherit;
+}
+.chat-message.evil-standard-chat .message-content a {
+  color: #f7e4a1;
+}
+.chat-message.evil-standard-chat .message-content a:hover {
+  color: #fff5d1;
+}
+.chat-message.evil-standard-chat .message-content .dice-tooltip .tooltip-part {
+  color: #25231e;
+}
