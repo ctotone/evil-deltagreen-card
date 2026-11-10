@@ -1,0 +1,16 @@
+{
+  "EVIL_DG_CARD": {
+    "Actions": {
+      "DamageRoll": "Rzut na obrażenia",
+      "LethalityRoll": "Rzut na śmiertelność"
+    },
+    "Cards": {
+      "Damage": "Obrażenia",
+      "DamageSingular": "punkt obrażeń",
+      "DamagePlural": "punkty obrażeń",
+      "Lethality": "Rzut na śmiertelność",
+      "SanDamage": "Utrata PP",
+      "SkillImprovements": "Rozwój umiejętności o {formula}"
+    }
+  }
+}

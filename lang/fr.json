@@ -1,0 +1,16 @@
+{
+  "EVIL_DG_CARD": {
+    "Actions": {
+      "DamageRoll": "Jet de dégâts",
+      "LethalityRoll": "Jet de létalité"
+    },
+    "Cards": {
+      "Damage": "Dégâts",
+      "DamageSingular": "Dégât",
+      "DamagePlural": "Dégâts",
+      "Lethality": "Jet de Létalité",
+      "SanDamage": "Perte de SAN",
+      "SkillImprovements": "Amélioration de compétences de {formula}"
+    }
+  }
+}

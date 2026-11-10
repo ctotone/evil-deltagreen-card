@@ -1,0 +1,16 @@
+{
+  "EVIL_DG_CARD": {
+    "Actions": {
+      "DamageRoll": "伤害掷骰",
+      "LethalityRoll": "致死掷骰"
+    },
+    "Cards": {
+      "Damage": "伤害",
+      "DamageSingular": "点伤害",
+      "DamagePlural": "点伤害",
+      "Lethality": "致死掷骰",
+      "SanDamage": "理智损失",
+      "SkillImprovements": "技能提升 {formula}"
+    }
+  }
+}

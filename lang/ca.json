@@ -1,0 +1,16 @@
+{
+  "EVIL_DG_CARD": {
+    "Actions": {
+      "DamageRoll": "Tirada de dany",
+      "LethalityRoll": "Tirada de letalitat"
+    },
+    "Cards": {
+      "Damage": "Dany",
+      "DamageSingular": "Dany",
+      "DamagePlural": "Danys",
+      "Lethality": "Tirada de letalitat",
+      "SanDamage": "Pèrdua de SAN",
+      "SkillImprovements": "Millora de competències de {formula}"
+    }
+  }
+}

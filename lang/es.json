@@ -1,0 +1,16 @@
+{
+  "EVIL_DG_CARD": {
+    "Actions": {
+      "DamageRoll": "Tirada de daño",
+      "LethalityRoll": "Tirada de letalidad"
+    },
+    "Cards": {
+      "Damage": "Daño",
+      "DamageSingular": "punto de daño",
+      "DamagePlural": "puntos de daño",
+      "Lethality": "Tirada de letalidad",
+      "SanDamage": "Daño COR",
+      "SkillImprovements": "Mejora de habilidades de {formula}"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "EVIL_DG_CARD": {
+    "Actions": {
+      "DamageRoll": "ダメージロール",
+      "LethalityRoll": "致命率ロール"
+    },
+    "Cards": {
+      "Damage": "ダメージ",
+      "DamageSingular": "ダメージ",
+      "DamagePlural": "ダメージ",
+      "Lethality": "致命率ロール",
+      "SanDamage": "SANダメージ",
+      "SkillImprovements": "技能の成長：{formula}"
+    }
+  }
+}

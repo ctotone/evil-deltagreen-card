@@ -1,0 +1,16 @@
+{
+  "EVIL_DG_CARD": {
+    "Actions": {
+      "DamageRoll": "Skadeslag",
+      "LethalityRoll": "Dödlighetsslag"
+    },
+    "Cards": {
+      "Damage": "Skada",
+      "DamageSingular": "skada",
+      "DamagePlural": "skador",
+      "Lethality": "Dödlighetsslag",
+      "SanDamage": "PSY-Skada",
+      "SkillImprovements": "Färdighetsförbättring med {formula}"
+    }
+  }
+}

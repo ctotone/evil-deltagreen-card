@@ -1,0 +1,16 @@
+{
+  "EVIL_DG_CARD": {
+    "Actions": {
+      "DamageRoll": "Rolagem de dano",
+      "LethalityRoll": "Rolagem de letalidade"
+    },
+    "Cards": {
+      "Damage": "Dano",
+      "DamageSingular": "ponto de dano",
+      "DamagePlural": "pontos de dano",
+      "Lethality": "Rolagem de letalidade",
+      "SanDamage": "Dano de SAN",
+      "SkillImprovements": "Melhoria de perícias em {formula}"
+    }
+  }
+}

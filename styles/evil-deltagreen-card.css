@@ -1,0 +1,810 @@
+/* Evil Delta Green Card — DEV 0.1 (validated visual baseline).
+   Visual CSS applied exclusively to Delta Green chat cards. Native roll logic,
+   actions and message permissions remain owned by Foundry/Delta Green.
+   Font 'atwriter' is supplied by the installed Delta Green system.
+*/
+
+.chat-message.dg-chat-card-message {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible;
+}
+
+.chat-message.dg-chat-card-message .dg-chat-card {
+  --evil-result-text: #12130e;
+  --evil-ink: var(--evil-result-text);
+  --evil-pale: #dce3bd;
+
+  position: relative;
+  box-sizing: border-box;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 11px 11px 13px;
+  border: 0;
+  border-radius: 12px;
+  background: #526b34 url('../assets/background-roll.webp') center center / 100% 100% no-repeat;
+  color: var(--evil-ink);
+  font-family: 'atwriter', 'SpecialElite', serif !important;
+  font-size: 13px;
+  line-height: 1.25;
+  box-shadow: 0 2px 9px rgba(0,0,0,.32);
+  overflow: hidden;
+}
+
+/* Keep the system's original author and deletion controls, rearrange only their appearance. */
+.chat-message.dg-chat-card-message .dg-chat-card__header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 61px;
+  padding: 1px 2px 9px;
+  background: transparent;
+  color: var(--evil-ink);
+}
+.chat-message.dg-chat-card-message .dg-chat-card__portrait-slot {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  aspect-ratio: 1 / 1;
+  border: 0;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none;
+  overflow: hidden;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__portrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  background: transparent !important;
+  border: 0;
+  box-shadow: none;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__identity {
+  min-width: 0;
+  justify-content: center;
+  gap: 3px;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__speaker {
+  color: var(--evil-ink);
+  font-size: var(--evil-speaker-font-size, 17px);
+  line-height: 1.08;
+  font-family: inherit;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__author {
+  color: var(--evil-ink);
+  font-size: 12px;
+  opacity: .85;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__metadata {
+  align-self: flex-start;
+  flex-wrap: wrap;
+  gap: 3px;
+  max-width: 82px;
+  opacity: 1;
+  color: var(--evil-ink);
+  font-size: 10px;
+  padding-top: 3px;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__metadata a,
+.chat-message.dg-chat-card-message .dg-chat-card__metadata time {
+  color: inherit;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__roll-label {
+  margin: 7px 10px 0;
+  padding: 8px 3px 3px;
+  border-top: 1px solid rgba(19,29,12,.55);
+  border-bottom: 0;
+  background: transparent;
+  color: var(--evil-ink);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.16;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__roll-label :is(img, i, span) {
+  max-width: 100%;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__body {
+  padding: 3px 7px 8px;
+  background: transparent;
+  border: 0;
+  color: var(--evil-ink);
+  overflow-wrap: anywhere;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__body .dice-roll {
+  margin: 0;
+  background: transparent;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__body .dice-result {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 3px;
+}
+/* The native result stays the native click target: do not replace data-action. */
+.chat-message.dg-chat-card-message .dg-chat-card__body .dice-total {
+  order: 1;
+  margin: 5px 0 0;
+  padding: 8px 2px 5px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--evil-result-text);
+  font: bold 47px/1.06 'atwriter', 'SpecialElite', serif;
+  text-align: center;
+  height: auto;
+  min-height: 0;
+  overflow-wrap: anywhere;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__body .dice-formula {
+  order: 2;
+  margin: 0 5px 3px;
+  padding: 3px 2px 5px;
+  border: 0;
+  border-bottom: 1px solid rgba(14,24,12,.45);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--evil-ink);
+  font: bold 15px/1.22 'atwriter', 'SpecialElite', serif;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+/* Tooltip remains native, including whatever visibility the system manages. */
+.chat-message.dg-chat-card-message .dg-chat-card__body .dice-tooltip {
+  order: 3;
+  width: 100%;
+  margin: 4px 0;
+  color: var(--evil-ink);
+  font-family: inherit;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__body .dice-tooltip .tooltip-part {
+  border: 1px solid rgba(25,37,16,.42);
+  background: rgba(229,234,201,.56);
+}
+.chat-message.dg-chat-card-message .dg-chat-card__body .dice-tooltip :is(.part-header, .dice-rolls) {
+  color: var(--evil-ink);
+}
+.chat-message.dg-chat-card-message .dg-result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 9px 3px 0;
+  align-items: center;
+}
+.chat-message.dg-chat-card-message .dg-result-actions button {
+  width: 90%;
+  min-height: 32px;
+  margin: 0;
+  padding: 6px 8px;
+  border: 1px solid #421c12;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #ce7652b3, #b85137b5);
+  color: #15120d;
+  font: bold 14px/1.2 'atwriter', 'SpecialElite', serif;
+  white-space: normal;
+  cursor: pointer;
+}
+.chat-message.dg-chat-card-message .dg-result-actions button:is(:hover,:focus-visible) {
+  background: linear-gradient(180deg, #e38f67, #c35b40);
+  outline: 2px solid rgba(27,35,18,.8);
+  outline-offset: 1px;
+}
+.chat-message.dg-chat-card-message .rollback-section {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid rgba(20,31,12,.35);
+  font-size: 12px;
+}
+.chat-message.dg-chat-card-message .rollback-section button {
+  flex: 0 0 auto;
+  color: var(--evil-ink);
+}
+.chat-message.dg-chat-card-message .roll-stats-chat-table {
+  width: 100%;
+  margin: 8px auto;
+  border-collapse: separate;
+  border-spacing: 3px;
+}
+.chat-message.dg-chat-card-message .roll-stats-chat-table td.roll-stats-chat-value {
+  padding: 7px 1px;
+  border: 1px solid rgba(19,29,14,.36);
+  background: rgba(218,224,195,.32);
+  color: var(--evil-ink);
+  font-size: 16px;
+}
+.chat-message.dg-chat-card-message .roll-stats-chat-table td.roll-stats-chat-value--b {
+  background: rgba(32,53,23,.12);
+}
+/* Long informational messages are left as native content: no fabricated columns. */
+.chat-message.dg-chat-card-message .dg-chat-card__body:not(:has(.dice-roll)) {
+  text-align: center;
+  line-height: 1.5;
+  padding-top: 10px;
+  padding-bottom: 13px;
+}
+@media (max-width: 350px) {
+  .chat-message.dg-chat-card-message .dg-chat-card { padding: 9px 7px 10px; }
+  .chat-message.dg-chat-card-message .dg-chat-card__portrait-slot { width: 46px; height: 46px; min-width: 46px; }
+  .chat-message.dg-chat-card-message .dg-chat-card__speaker { font-size: min(14px, var(--evil-speaker-font-size, 17px)); }
+  .chat-message.dg-chat-card-message .dg-chat-card__metadata { max-width: 65px; }
+}
+
+/* Narrow-chat protection: lethality displays a composite native total such as
+   '100 (20 Dégâts)'. Distinguish it through its native die breakdown without
+   reading or altering text, numbers, flags, data-action or roll calculation. */
+.chat-message.dg-chat-card-message .dice-roll:has(.dice-tooltip .die.d100):has(.dice-tooltip .die.d10) .dice-total {
+  font-size: 26px;
+  line-height: 1.14;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  max-width: 100%;
+}
+/* The two independent SAN results retain a prominent, but fitting, presentation. */
+.chat-message.dg-chat-card-message .dice-roll:has(.dice-tooltip .die.d10):not(:has(.dice-tooltip .die.d100)) .dice-total {
+  font-size: 36px;
+  line-height: 1.12;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+/* For long labels keep the page compact; single-word terms remain readable. */
+.chat-message.dg-chat-card-message .dg-chat-card__roll-label {
+  text-wrap: pretty;
+  hyphens: none;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__identity {
+  flex: 1 1 auto;
+  padding-left: 2px;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__metadata {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+/* The dice tooltip stays available on click and displays the native content. */
+.chat-message.dg-chat-card-message .dice-tooltip {
+  font-size: 12px;
+}
+
+/* Le texte des longs titres de létalité ne doit pas écraser le résultat. */
+.chat-message.dg-chat-card-message .dg-chat-card:has(.dice-tooltip .die.d100):has(.dice-tooltip .die.d10) .dg-chat-card__roll-label {
+  font-size: 13px;
+  line-height: 1.17;
+  padding-top: 6px;
+  margin-top: 5px;
+}
+
+
+/* Révision 04 : toute la typographie du contenu relève d'atwriter.
+   Exclusion des icônes (Font Awesome / fontes d'icônes natives). */
+.chat-message.dg-chat-card-message .dg-chat-card :is(
+  header, div, span, p, b, strong, em, small, time, a,
+  button, label, h1, h2, h3, h4, h5, h6, table, td, th
+):not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.evil-percent-sign) {
+  font-family: 'atwriter', 'SpecialElite', serif !important;
+}
+/* Détail du dé inutile dans la présentation Evilbram ; le DOM et les
+   événements natifs demeurent intacts, aucune information recalculée. */
+.chat-message.dg-chat-card-message .dg-chat-card__body .dice-tooltip {
+  display: none !important;
+}
+/* Label de combat décomposé sans supprimer les modificateurs natifs. */
+.chat-message.dg-chat-card-message .dg-chat-card__roll-label.evil-weapon-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.chat-message.dg-chat-card-message .evil-weapon-label__skill {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.15;
+}
+.chat-message.dg-chat-card-message .evil-weapon-label__item {
+  display: block;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: normal;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+
+/* Ajustements 07 — correction de spécificité : le sélecteur global
+   exclut .evil-percent-sign, permettant la police classique pour % uniquement. */
+.chat-message.dg-chat-card-message .dg-chat-card .evil-percent-sign {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight: inherit;
+  font-style: inherit;
+}
+/* Rapprocher le séparateur supérieur du portrait (sans déplacer les contrôles). */
+.chat-message.dg-chat-card-message .dg-chat-card__header {
+  padding-bottom: 5px;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__roll-label {
+  margin-top: 5px;
+}
+/* La formule/verdict dispose déjà de son séparateur inférieur. Éviter un second
+   trait au-dessus de la ligne de marquage d'échec de compétence. */
+.chat-message.dg-chat-card-message .rollback-section {
+  border-top: 0 !important;
+  padding-top: 0;
+}
+
+/* Ajustements 09 — ne conserver le séparateur inférieur que lorsqu'un
+   prolongement natif de carte suit le résultat (boutons ou marquage).
+   Aucun DOM ni gestionnaire d'action n'est modifié. */
+.chat-message.dg-chat-card-message
+  .dg-chat-card__body .dice-roll:not(:has(> .dg-result-actions, > .rollback-section))
+  > .dice-result > .dice-formula {
+  border-bottom: 0;
+}
+
+
+/* Ajustements 10 — fonds conditionnels (aucun calcul ni remplacement du jet).
+   Toutes les cartes reçoivent le vert par défaut. Les classes de verdict
+   existantes pilotent les fonds ; les conséquences forcent le fond orange. */
+.chat-message.dg-chat-card-message .dg-chat-card {
+  --evil-bg-default: url('../assets/background-roll.webp');
+  --evil-bg-failure: url('../assets/background-failure.webp');
+  --evil-bg-critical-failure: url('../assets/background-critical-failure.webp');
+  --evil-bg-critical-success: url('../assets/background-critical-success.webp');
+  --evil-bg-damage: url('../assets/background-damage.webp');
+  --evil-bg-current: var(--evil-bg-default);
+  background-image: var(--evil-bg-current);
+}
+/* Ne pas changer de fond pour les messages de ressources, stats ou progrès. */
+.chat-message.dg-chat-card-message .dg-chat-card:has(.dice-roll.evil-result--failure) {
+  --evil-bg-current: var(--evil-bg-failure);
+}
+.chat-message.dg-chat-card-message .dg-chat-card:has(.dice-roll.evil-result--critical-failure) {
+  --evil-bg-current: var(--evil-bg-critical-failure);
+}
+.chat-message.dg-chat-card-message .dg-chat-card:has(.dice-roll.evil-result--critical-success) {
+  --evil-bg-current: var(--evil-bg-critical-success);
+}
+/* Les trois catégories de conséquences prennent toujours le dessus. */
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--consequence.evil-card--consequence {
+  --evil-bg-current: var(--evil-bg-damage);
+}
+/* Résultat et verdict en encre commune : ne plus appliquer les couleurs
+   individuelles de succès / échec / critique issues des révisions précédentes. */
+.chat-message.dg-chat-card-message .dg-chat-card .dice-roll :is(.dice-total, .dice-formula),
+.chat-message.dg-chat-card-message .dg-chat-card .dice-roll[class*="evil-result--"] :is(.dice-total, .dice-formula),
+.chat-message.dg-chat-card-message .dg-chat-card .dice-roll.evil-result--damage .dice-total {
+  color: var(--evil-result-text) !important;
+}
+
+/* Ajustements 13 — réglages partagés entre familles de cartes.
+   La compacité s'applique aux blocs de jets existants, indépendamment du
+   verdict. Les cartes informatives sans .dice-roll ne sont pas touchées.
+   Les tailles spécifiques des résultats composites restent prioritaires. */
+.chat-message.dg-chat-card-message .dg-chat-card__body:has(.dice-roll) {
+  padding-top: 0;
+  padding-bottom: 5px;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__body .dice-result {
+  gap: 0;
+}
+.chat-message.dg-chat-card-message .dg-chat-card__body .dice-total {
+  margin-top: 0;
+  padding: 3px 2px 0;
+}
+/* Seules les valeurs textuelles reconnues comme verdict par le JS prennent
+   20px et les capitales. Ni les formules 1d8 / 1d6, ni les cartes SAN
+   doubles, ni les ressources ne sont prises pour des verdicts. Cela couvre
+   les attaques, les compétences et les issues létales/non létales. */
+.chat-message.dg-chat-card-message .dg-chat-card__body
+  .dice-roll:is(.evil-result--success, .evil-result--failure,
+                .evil-result--critical-success, .evil-result--critical-failure,
+                .evil-result--lethal):not(.evil-result--damage) .dice-formula {
+  font-size: 20px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  margin: 0 5px;
+  padding: 0 2px 2px;
+}
+
+/* Ajustements 19 : revenir aux hauteurs naturelles (aucune contrainte 1:1).
+   Conserver uniquement le padding inférieur de 10px demandé. */
+.chat-message.dg-chat-card-message .dg-chat-card__body:has(.dice-roll) {
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+
+/* Ajustements 22 : organisation spécifique de la carte de dégâts.
+   La formule et la perforation sont déplacées sous le nom de l'arme,
+   conformément à la maquette validée. Le résultat reste seul au centre. */
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .dg-chat-card__roll-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: 5px;
+  padding-top: 10px;
+  line-height: 1.15;
+}
+.chat-message.dg-chat-card-message .evil-damage-heading {
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 1.16;
+  text-transform: none;
+}
+.chat-message.dg-chat-card-message .evil-damage-item,
+.chat-message.dg-chat-card-message .evil-damage-item > b {
+  display: block;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+.chat-message.dg-chat-card-message .evil-damage-item .dice-formula {
+  display: inline;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 15px;
+  line-height: 1.2;
+}
+.chat-message.dg-chat-card-message .evil-damage-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 0;
+  row-gap: 2px;
+  margin-top: 2px;
+  max-width: 100%;
+  font-size: 15px;
+  line-height: 1.2;
+}
+.chat-message.dg-chat-card-message .evil-damage-meta .dg-chat-card__armor-piercing {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 16px;
+  line-height: 1.1;
+  max-width: 100%;
+}
+.chat-message.dg-chat-card-message .evil-damage-meta .evil-damage-piercing-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+.chat-message.dg-chat-card-message .evil-damage-meta .armor-piercing-chat-card-img {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .dice-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  min-width: 0;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .dice-total {
+  order: 1;
+  font-size: 49px;
+  line-height: 1.08;
+  padding: 18px 2px 6px;
+  margin: 0;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout > .dg-chat-card__body .dice-result > .dice-formula,
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout > .dg-chat-card__body .dice-result > .dg-chat-card__armor-piercing,
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout > .dg-chat-card__body > .dg-chat-card__armor-piercing {
+  display: none !important;
+}
+
+/* Ajustements 24 — le libellé singulier/pluriel accompagne le chiffre.
+   La ligne du haut ne contient plus de titre ; elle conserve arme,
+   formule entre crochets et perforation sur deux lignes. */
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .dg-chat-card__roll-label {
+  padding-top: 23px;
+  gap: 3px;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .dice-result {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 9px;
+  margin: 27px 0 13px;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .dice-total {
+  padding: 0;
+  flex: 0 1 auto;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .evil-damage-heading {
+  display: inline;
+  flex: 0 1 auto;
+  font: bold 34px/1.08 'atwriter', 'SpecialElite', serif;
+  white-space: nowrap;
+  color: var(--evil-ink);
+}
+@media (max-width: 350px) {
+  .chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .evil-damage-heading {
+    font-size: 31px;
+  }
+}
+
+/* Ajustements 25 — disposition stricte des 3 lignes de dégâts :
+   1 arme [formule] ; 2 perforation ; 3 chiffre Dégât(s).
+   Ces règles ne ciblent que les cartes de dégâts directes. */
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .evil-damage-item {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 100%;
+  font-size: 16px;
+  line-height: 1.2;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .evil-damage-item > b {
+  display: inline;
+  flex: 0 1 auto;
+  min-width: 0;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: nowrap;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .evil-damage-item > .dice-formula {
+  display: inline;
+  flex: 0 0 auto;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: nowrap;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .evil-damage-meta {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 18px;
+  margin-top: 3px;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .dice-result {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: nowrap;
+  column-gap: 9px;
+  margin: 10px 0 12px;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .dice-result > .dice-total {
+  order: 0;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  line-height: 1.08;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .dice-result > .evil-damage-heading {
+  order: 1;
+  display: inline-block;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  line-height: 1.08;
+  white-space: nowrap;
+}
+@media (max-width: 350px) {
+  .chat-message.dg-chat-card-message .dg-chat-card.evil-card--damage-layout .evil-damage-item { font-size: 16px; gap: 5px; }
+}
+
+/* Ajustements 27 — létalité : hiérarchie de la maquette, données natives préservées. */
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--lethality-layout .dg-chat-card__roll-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin-top: 5px;
+  padding: 10px 4px 3px;
+  font-size: 15px;
+  line-height: 1.18;
+}
+.chat-message.dg-chat-card-message .evil-lethality-heading {
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 1.14;
+  text-align: center;
+}
+.chat-message.dg-chat-card-message .evil-lethality-item {
+  display: block;
+  font-size: 15px;
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.chat-message.dg-chat-card-message .evil-lethality-item > b {
+  font-weight: normal;
+  text-transform: capitalize;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--lethality-layout .dice-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--lethality-layout .dice-total {
+  order: 1;
+  font-size: 49px !important;
+  line-height: 1.08;
+  margin: 0px 0 0;
+  padding: 0 2px;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--lethality-layout .evil-lethality-damage {
+  order: 2;
+  display: block;
+  font-size: 22px;
+  line-height: 1.16;
+  margin-top: 2px;
+  color: var(--evil-result-text);
+  text-align: center;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--lethality-layout .dice-formula {
+  order: 3;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.18;
+  text-transform: uppercase;
+  margin: 20px 0 5px;
+  padding: 0;
+  border: 0;
+  color: var(--evil-result-text) !important;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--lethality-layout .dice-roll.evil-result--lethal .dice-formula {
+  color: #5b0404 !important;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--lethality-layout .dice-tooltip {
+  order: 4;
+}
+
+/* Ajustements 29 : le détail des dés n'est plus présenté comme une action.
+   La surcouche visuelle neutralise uniquement le curseur de clic du jet.
+   Boutons, liens natifs et contrôles de suppression restent interactifs. */
+.chat-message.dg-chat-card-message .dg-chat-card .dice-roll[data-action="expandRoll"],
+.chat-message.dg-chat-card-message .dg-chat-card .dice-roll[data-action="expandRoll"] .dice-result,
+.chat-message.dg-chat-card-message .dg-chat-card .dice-roll[data-action="expandRoll"] .dice-total,
+.chat-message.dg-chat-card-message .dg-chat-card .dice-roll[data-action="expandRoll"] .dice-formula,
+.chat-message.dg-chat-card-message .dg-chat-card .dice-roll[data-action="expandRoll"] .dice-result *:not(button):not(a) {
+  cursor: default !important;
+}
+
+/* Ajustements 30 — carte de perte de SAN : fond jaune propre à cette
+   famille, avec titre, formules puis deux résultats du système. */
+.chat-message.dg-chat-card-message .dg-chat-card {
+  --evil-bg-san: url('../assets/background-san.webp');
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--san-layout.evil-card--san-layout {
+  --evil-bg-current: var(--evil-bg-san);
+  /* Le WEBP SAN contient des pixels transparents sur ses coins :
+     éviter que la couleur de fond verte commune transparaisse. */
+  background-color: #17110d;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--san-layout .dg-chat-card__roll-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 5px;
+  padding: 13px 3px 0;
+  line-height: 1.16;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--san-layout .evil-san-heading {
+  display: block;
+  font-size: 25px;
+  line-height: 1.16;
+  font-weight: bold;
+  text-align: center;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--san-layout .evil-san-formula {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: normal;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--san-layout .evil-san-formula::before {
+  content: '(';
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--san-layout .evil-san-formula::after {
+  content: ')';
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--san-layout .dice-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--san-layout .dice-total {
+  order: 1;
+  width: 100%;
+  margin: 22px 0 8px;
+  padding: 0 2px;
+  border: 0;
+  font-size: 49px !important;
+  line-height: 1.12;
+  text-align: center;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+@media (max-width: 350px) {
+  .chat-message.dg-chat-card-message .dg-chat-card.evil-card--san-layout .dice-total {
+    font-size: 43px !important;
+  }
+}
+
+/* Ajustements 32 — cartes d'amélioration de compétences, deux entrées par ligne.
+   Le corps ne contient pas de dés ; la grille ne concerne que ce type de carte. */
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--skill-improvements .dg-chat-card__roll-label {
+  font-size: 19px;
+  line-height: 1.18;
+  padding-top: 12px;
+  padding-bottom: 5px;
+}
+.chat-message.dg-chat-card-message .dg-chat-card.evil-card--skill-improvements .dg-chat-card__body {
+  padding: 7px 5px 13px;
+}
+.chat-message.dg-chat-card-message .evil-improvements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px 8px;
+  align-items: start;
+  text-align: center;
+}
+.chat-message.dg-chat-card-message .evil-improvements-entry {
+  min-width: 0;
+  font-size: 13px;
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+.chat-message.dg-chat-card-message .evil-improvements-entry b {
+  white-space: nowrap;
+}
+
+/* Ajustements 33 : une compétence + son gain sur une seule ligne si possible.
+   Taille mesurée et bornée en JS ; retour ligne de secours si nom extrême. */
+.chat-message.dg-chat-card-message .evil-improvements-entry {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  min-width: 0;
+}
+.chat-message.dg-chat-card-message .evil-improvements-entry--wrap {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}

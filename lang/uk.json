@@ -1,0 +1,16 @@
+{
+  "EVIL_DG_CARD": {
+    "Actions": {
+      "DamageRoll": "Кидок на шкоду",
+      "LethalityRoll": "Кидок на летальність"
+    },
+    "Cards": {
+      "Damage": "Шкода",
+      "DamageSingular": "одиниця шкоди",
+      "DamagePlural": "одиниць шкоди",
+      "Lethality": "Кидок на летальність",
+      "SanDamage": "Втрата ГЗД",
+      "SkillImprovements": "Покращення навичок на {formula}"
+    }
+  }
+}

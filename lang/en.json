@@ -1,0 +1,16 @@
+{
+  "EVIL_DG_CARD": {
+    "Actions": {
+      "DamageRoll": "Damage Roll",
+      "LethalityRoll": "Lethality Roll"
+    },
+    "Cards": {
+      "Damage": "Damage",
+      "DamageSingular": "Damage",
+      "DamagePlural": "Damage",
+      "Lethality": "Lethality Roll",
+      "SanDamage": "SAN Damage",
+      "SkillImprovements": "Skill improvements by {formula}"
+    }
+  }
+}

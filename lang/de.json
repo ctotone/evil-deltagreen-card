@@ -1,0 +1,16 @@
+{
+  "EVIL_DG_CARD": {
+    "Actions": {
+      "DamageRoll": "Schadenswurf",
+      "LethalityRoll": "Tödlichkeitswurf"
+    },
+    "Cards": {
+      "Damage": "Schaden",
+      "DamageSingular": "Schaden",
+      "DamagePlural": "Schaden",
+      "Lethality": "Tödlichkeitswurf",
+      "SanDamage": "Stabilitäts-Verlust",
+      "SkillImprovements": "Fertigkeitsverbesserung um {formula}"
+    }
+  }
+}
